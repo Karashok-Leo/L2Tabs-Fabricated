@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "l2tabs",
+	"version": "${version}",
+	"name": "L2 Tabs",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/l2tabs/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.xkmc.l2tabs.L2Tabs"
+		],
+		"client": [
+			"dev.xkmc.l2tabs.L2TabsClient"
+		],
+		"fabric-datagen": [
+			"dev.xkmc.l2tabs.L2TabsData"
+		]
+	},
+	"mixins": [
+		"l2tabs.mixins.json"
+	],
+	"accessWidener" : "l2tabs.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.15.10",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

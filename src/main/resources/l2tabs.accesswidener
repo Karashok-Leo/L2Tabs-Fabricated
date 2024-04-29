@@ -1,0 +1,3 @@
+accessWidener   v1  named
+accessible  field   net/minecraft/entity/attribute/EntityAttributeModifier nameGetter Ljava/util/function/Supplier;
+mutable     field   net/minecraft/entity/attribute/EntityAttributeModifier nameGetter Ljava/util/function/Supplier;
