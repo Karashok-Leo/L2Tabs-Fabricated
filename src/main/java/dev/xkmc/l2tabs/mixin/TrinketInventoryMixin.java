@@ -10,11 +10,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = TrinketInventory.class, remap = false)
+@Mixin(value = TrinketInventory.class)
 public abstract class TrinketInventoryMixin
 {
     @Final
-    @Shadow
+    @Shadow(remap = false)
     private TrinketComponent component;
 
     @Inject(method = "update", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/util/collection/DefaultedList;ofSize(ILjava/lang/Object;)Lnet/minecraft/util/collection/DefaultedList;"))

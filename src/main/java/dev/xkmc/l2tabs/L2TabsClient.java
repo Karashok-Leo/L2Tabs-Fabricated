@@ -21,9 +21,10 @@ public class L2TabsClient implements ClientModInitializer
     {
         NetworkHandlers.registerClient();
         TabInventory.register();
-//        L2TabsData.register();
         TAB_INVENTORY = TabRegistry.GROUP.registerTab(0, TabInventory::new, () -> Items.CRAFTING_TABLE, L2TabsLangData.INVENTORY.get());
         TAB_ATTRIBUTE = TabRegistry.GROUP.registerTab(1000, TabAttributes::new, () -> Items.IRON_SWORD, L2TabsLangData.ATTRIBUTE.get());
-        TabTrinketCompat.onClientInit();
+
+        // NYI
+//        TabTrinketCompat.onClientInit();
     }
 }

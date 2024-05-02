@@ -1,6 +1,5 @@
 package dev.xkmc.l2tabs.tabs.inventory;
 
-import dev.xkmc.l2tabs.mixin.HandledScreenAccessor;
 import dev.xkmc.l2tabs.tabs.core.ITabScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -11,7 +10,7 @@ public record ScreenWrapper(int x, int y, int w, int h, Screen screen) implement
     {
         int x, y;
         if (screen instanceof HandledScreen<?> tx)
-            return new ScreenWrapper(((HandledScreenAccessor) tx).getX(), ((HandledScreenAccessor) tx).getY(), tx.width, tx.height, screen);
+            return new ScreenWrapper(tx.x, tx.y, tx.backgroundWidth, tx.backgroundHeight, screen);
         else
         {
             x = (screen.width - 176) / 2;

@@ -26,8 +26,10 @@ public class L2Tabs implements ModInitializer
         HANDLER.configure(OpenTrinketPacket.class, SyncAttributeToClient.class);
         NetworkHandlers.registerMain();
         L2TabsConfig.register();
-        TabTrinketCompat.onStartup();
         L2TabsData.register();
+
+        // NYI
+//        TabTrinketCompat.onStartup();
     }
 
     public static final String MOD_ID = "l2tabs";

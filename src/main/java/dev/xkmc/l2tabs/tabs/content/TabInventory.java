@@ -1,7 +1,6 @@
 package dev.xkmc.l2tabs.tabs.content;
 
 import dev.xkmc.l2tabs.L2TabsClient;
-import dev.xkmc.l2tabs.mixin.ScreenAccessor;
 import dev.xkmc.l2tabs.tabs.core.TabBase;
 import dev.xkmc.l2tabs.tabs.core.TabManager;
 import dev.xkmc.l2tabs.tabs.core.TabToken;
@@ -29,11 +28,12 @@ public class TabInventory extends TabBase<InvTabData, TabInventory>
 
     public static void register()
     {
-        ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
+        ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) ->
+        {
             if (inventoryTest.test(screen))
             {
                 var manager = new TabManager<>(ScreenWrapper.of(screen), new InvTabData());
-                manager.init(((ScreenAccessor)screen)::invoke_addDrawableChild, L2TabsClient.TAB_INVENTORY);
+                manager.init(screen::addDrawableChild, L2TabsClient.TAB_INVENTORY);
             }
         });
     }

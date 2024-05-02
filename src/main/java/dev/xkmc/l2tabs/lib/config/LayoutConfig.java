@@ -1,7 +1,6 @@
 package dev.xkmc.l2tabs.lib.config;
 
 import dev.xkmc.l2serial.serialization.SerialClass;
-import dev.xkmc.l2tabs.mixin.HandledScreenAccessor;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
@@ -183,11 +182,10 @@ public class LayoutConfig
 
         private ScreenRenderer(HandledScreen<?> scrIn)
         {
-            var accessor = ((HandledScreenAccessor) scrIn);
-            this.x = accessor.getX();
-            this.y = accessor.getY();
-            this.w = accessor.getBackgroundWidth();
-            this.h = accessor.getBackgroundHeight();
+            this.x = scrIn.x;
+            this.y = scrIn.y;
+            this.w = scrIn.backgroundWidth;
+            this.h = scrIn.backgroundHeight;
             this.scr = scrIn;
         }
 

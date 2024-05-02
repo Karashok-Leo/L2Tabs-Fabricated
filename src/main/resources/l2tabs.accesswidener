@@ -1,3 +1,8 @@
-accessWidener   v1  named
-accessible  field   net/minecraft/entity/attribute/EntityAttributeModifier nameGetter Ljava/util/function/Supplier;
-mutable     field   net/minecraft/entity/attribute/EntityAttributeModifier nameGetter Ljava/util/function/Supplier;
+accessWidener v1 named
+accessible field net/minecraft/client/gui/screen/ingame/HandledScreen x I
+accessible field net/minecraft/client/gui/screen/ingame/HandledScreen y I
+accessible field net/minecraft/client/gui/screen/ingame/HandledScreen backgroundWidth I
+accessible field net/minecraft/client/gui/screen/ingame/HandledScreen backgroundHeight I
+accessible method net/minecraft/client/gui/screen/Screen addDrawableChild (Lnet/minecraft/client/gui/Element;)Lnet/minecraft/client/gui/Element;
+accessible field net/minecraft/entity/attribute/EntityAttributeModifier nameGetter Ljava/util/function/Supplier;
+mutable field net/minecraft/entity/attribute/EntityAttributeModifier nameGetter Ljava/util/function/Supplier;

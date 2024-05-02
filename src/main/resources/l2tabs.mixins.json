@@ -4,15 +4,12 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "EntityTrackerEntryMixin",
-    "ServerPlayerEntityMixin",
-    "TrinketInventoryMixin"
+    "ServerPlayerEntityMixin"
+  ],
+  "client": [
+    "ScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "client": [
-    "HandledScreenAccessor",
-    "ScreenAccessor",
-    "ScreenMixin"
-  ]
+  }
 }
