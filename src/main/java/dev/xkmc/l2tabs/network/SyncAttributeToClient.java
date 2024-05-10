@@ -1,7 +1,9 @@
 package dev.xkmc.l2tabs.network;
 
-import dev.xkmc.l2serial.network.SerialPacketBase;
+import dev.xkmc.l2serial.network.SerialPacketS2C;
 import dev.xkmc.l2serial.serialization.SerialClass;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 
@@ -9,7 +11,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 @SerialClass
-public class SyncAttributeToClient implements SerialPacketBase
+public class SyncAttributeToClient implements SerialPacketS2C
 {
     @Deprecated
     public SyncAttributeToClient()
@@ -32,6 +34,26 @@ public class SyncAttributeToClient implements SerialPacketBase
                 modifiers.add(new ModifierEntry(mod.getId(), mod.getName()));
             if (modifiers.isEmpty()) continue;
             list.add(new AttributeEntry(attr.getAttribute(), modifiers));
+        }
+    }
+
+    @Override
+    public void handle(ClientPlayerEntity player)
+    {
+        var level = MinecraftClient.getInstance().world;
+        if (level == null) return;
+        var entity = level.getEntityById(id);
+        if (!(entity instanceof LivingEntity le)) return;
+        for (var attr : list)
+        {
+            var ins = le.getAttributeInstance(attr.attr());
+            if (ins == null) continue;
+            for (var ent : attr.list())
+            {
+                var mod = ins.getModifier(ent.id());
+                if (mod == null) continue;
+                mod.nameGetter = ent::name;
+            }
         }
     }
 
