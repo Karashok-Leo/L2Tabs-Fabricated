@@ -1,7 +1,7 @@
 package dev.xkmc.l2tabs.data;
 
 import dev.xkmc.l2tabs.L2Tabs;
-import net.karashokleo.leobrary.data.AbstractDataLoader;
+import karashokleo.leobrary.data.AbstractDataLoader;
 import net.minecraft.util.Identifier;
 
 public class AttributeConfigLoader extends AbstractDataLoader<AttributeDisplayConfig>

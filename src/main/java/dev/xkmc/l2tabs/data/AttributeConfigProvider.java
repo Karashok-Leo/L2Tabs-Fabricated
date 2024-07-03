@@ -1,8 +1,8 @@
 package dev.xkmc.l2tabs.data;
 
 import dev.xkmc.l2tabs.L2Tabs;
+import karashokleo.leobrary.data.AbstractDataProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.karashokleo.leobrary.data.AbstractDataProvider;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.util.Identifier;
 

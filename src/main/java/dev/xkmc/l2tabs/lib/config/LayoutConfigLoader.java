@@ -2,7 +2,7 @@ package dev.xkmc.l2tabs.lib.config;
 
 import dev.xkmc.l2tabs.L2Tabs;
 import dev.xkmc.l2tabs.lib.menu.SpriteManager;
-import net.karashokleo.leobrary.data.AbstractDataLoader;
+import karashokleo.leobrary.data.AbstractDataLoader;
 import net.minecraft.util.Identifier;
 
 public class LayoutConfigLoader extends AbstractDataLoader<LayoutConfig>

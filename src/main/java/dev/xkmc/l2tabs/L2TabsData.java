@@ -5,10 +5,10 @@ import dev.xkmc.l2tabs.data.AttributeConfigLoader;
 import dev.xkmc.l2tabs.data.L2TabsLangData;
 import dev.xkmc.l2tabs.lib.config.LayoutConfigLoader;
 import dev.xkmc.l2tabs.lib.config.LayoutConfigProvider;
+import karashokleo.leobrary.datagen.generator.LanguageGenerator;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.karashokleo.leobrary.datagen.generator.LanguageGenerator;
 import net.minecraft.resource.ResourceType;
 
 public class L2TabsData implements DataGeneratorEntrypoint
