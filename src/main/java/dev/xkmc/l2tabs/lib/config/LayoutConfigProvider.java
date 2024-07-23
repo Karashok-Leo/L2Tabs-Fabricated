@@ -13,7 +13,7 @@ public class LayoutConfigProvider extends AbstractDataProvider
     }
 
     @Override
-    public void add()
+    public void addAll()
     {
         for (int i = 0; i < 4; i++)
         {

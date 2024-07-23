@@ -14,7 +14,7 @@ public class AttributeConfigProvider extends AbstractDataProvider
     }
 
     @Override
-    public void add()
+    public void addAll()
     {
         add(new Identifier(L2Tabs.MOD_ID, "vanilla"),
                 new AttributeDisplayConfig()

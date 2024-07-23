@@ -38,8 +38,7 @@ dependencies {
 	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
 
 	include modImplementation("dev.xkmc.l2serial:L2Serial:1.2.2")
-	include modImplementation("karashokleo.leobrary:data:1.0.1")
-	include modImplementation("karashokleo.leobrary:datagen:1.0.1")
+	include modImplementation("karashokleo.leobrary:data:${project.leobrary_version}")
 
 }
 
