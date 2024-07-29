@@ -48,12 +48,12 @@ public abstract class BaseAttributeScreen extends BaseTextScreen
         int x = (this.width + this.imageWidth) / 2 - 16;
         int y = (this.height - this.imageHeight) / 2 + 4;
         if (page > 0)
-            addDrawableChild(ButtonWidget.builder(Text.literal("<"), e -> click(-1)).position(x - w - 1, y).size(w, h).build());
+            addDrawableChild(ButtonWidget.builder(Text.literal("<"), e -> click(page - 1)).position(x - w - 1, y).size(w, h).build());
         if (page < totalPage - 1)
-            addDrawableChild(ButtonWidget.builder(Text.literal(">"), e -> click(1)).position(x, y).size(w, h).build());
+            addDrawableChild(ButtonWidget.builder(Text.literal(">"), e -> click(page + 1)).position(x, y).size(w, h).build());
     }
 
-    protected abstract void click(int nextPage);
+    protected abstract void click(int page);
 
     @Override
     public void render(DrawContext g, int mx, int my, float tick)

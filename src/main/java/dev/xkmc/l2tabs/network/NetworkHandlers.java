@@ -6,7 +6,7 @@ public class NetworkHandlers
 {
     public static void registerMain()
     {
-        L2Tabs.HANDLER.configureC2S(OpenTrinketPacket.class);
+        L2Tabs.HANDLER.configure(SyncAttributeToClient.class);
     }
 
     public static void registerClient()

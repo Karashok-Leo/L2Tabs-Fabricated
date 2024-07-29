@@ -1,14 +1,11 @@
 package dev.xkmc.l2tabs;
 
 import dev.xkmc.l2serial.network.PacketHandler;
-import dev.xkmc.l2tabs.compat.TabTrinketCompat;
 import dev.xkmc.l2tabs.data.AttributeDisplayConfig;
 import dev.xkmc.l2tabs.data.L2TabsConfig;
 import dev.xkmc.l2tabs.network.NetworkHandlers;
-import dev.xkmc.l2tabs.network.OpenTrinketPacket;
 import dev.xkmc.l2tabs.network.SyncAttributeToClient;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.LivingEntity;
@@ -23,13 +20,9 @@ public class L2Tabs implements ModInitializer
     @Override
     public void onInitialize()
     {
-        HANDLER.configure(OpenTrinketPacket.class, SyncAttributeToClient.class);
         NetworkHandlers.registerMain();
         L2TabsConfig.register();
         L2TabsData.register();
-
-        // NYI
-//        TabTrinketCompat.onStartup();
     }
 
     public static final String MOD_ID = "l2tabs";

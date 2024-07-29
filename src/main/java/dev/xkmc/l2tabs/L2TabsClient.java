@@ -1,6 +1,5 @@
 package dev.xkmc.l2tabs;
 
-import dev.xkmc.l2tabs.compat.TabTrinketCompat;
 import dev.xkmc.l2tabs.data.L2TabsLangData;
 import dev.xkmc.l2tabs.network.NetworkHandlers;
 import dev.xkmc.l2tabs.tabs.content.TabAttributes;
@@ -23,8 +22,5 @@ public class L2TabsClient implements ClientModInitializer
         TabInventory.register();
         TAB_INVENTORY = TabRegistry.GROUP.registerTab(0, TabInventory::new, () -> Items.CRAFTING_TABLE, L2TabsLangData.INVENTORY.get());
         TAB_ATTRIBUTE = TabRegistry.GROUP.registerTab(1000, TabAttributes::new, () -> Items.IRON_SWORD, L2TabsLangData.ATTRIBUTE.get());
-
-        // NYI
-//        TabTrinketCompat.onClientInit();
     }
 }

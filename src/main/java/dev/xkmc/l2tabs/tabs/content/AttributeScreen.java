@@ -27,8 +27,8 @@ public class AttributeScreen extends BaseAttributeScreen
         return MinecraftClient.getInstance().player;
     }
 
-    protected void click(int nextPage)
+    protected void click(int page)
     {
-        MinecraftClient.getInstance().setScreen(new AttributeScreen(getTitle(), nextPage));
+        MinecraftClient.getInstance().setScreen(new AttributeScreen(getTitle(), page));
     }
 }
