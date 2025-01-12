@@ -5,8 +5,11 @@ import dev.xkmc.l2tabs.data.AttributeDisplayConfig;
 import dev.xkmc.l2tabs.data.L2TabsConfig;
 import dev.xkmc.l2tabs.network.NetworkHandlers;
 import dev.xkmc.l2tabs.network.SyncAttributeToClient;
+import dev.xkmc.l2tabs.network.SyncConfigToClient;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -23,6 +26,9 @@ public class L2Tabs implements ModInitializer
         NetworkHandlers.registerMain();
         L2TabsConfig.register();
         L2TabsData.register();
+
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> sender.sendPacket(HANDLER.getPacket(new SyncConfigToClient(ATTRIBUTE_ENTRY))));
+        ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, joined) -> ServerPlayNetworking.send(player, HANDLER.getPacket(new SyncConfigToClient(ATTRIBUTE_ENTRY))));
     }
 
     public static final String MOD_ID = "l2tabs";

@@ -6,11 +6,11 @@ public class NetworkHandlers
 {
     public static void registerMain()
     {
-        L2Tabs.HANDLER.configure(SyncAttributeToClient.class);
+        L2Tabs.HANDLER.configure(SyncAttributeToClient.class, SyncConfigToClient.class);
     }
 
     public static void registerClient()
     {
-        L2Tabs.HANDLER.configureS2C(SyncAttributeToClient.class);
+        L2Tabs.HANDLER.configureS2C(SyncAttributeToClient.class, SyncConfigToClient.class);
     }
 }
