@@ -1,5 +1,6 @@
 package dev.xkmc.l2tabs.tabs.core;
 
+import dev.xkmc.l2tabs.data.L2TabsConfig;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -38,6 +39,8 @@ public class TabManager<G extends TabGroupData<G>>
         int imgWidth = screen.getXSize();
         int imgHeight = screen.getYSize();
         int index = 0, order = 0, page = 0;
+
+        guiLeft += L2TabsConfig.client().tabOffsetX;
 
         for (TabToken<G, ?> token : token_list)
         {

@@ -23,6 +23,9 @@
 		],
 		"fabric-datagen": [
 			"dev.xkmc.l2tabs.L2TabsData"
+		],
+		"modmenu": [
+			"dev.xkmc.l2tabs.L2TabsModMenuIntegration"
 		]
 	},
 	"mixins": [
